@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Guru Manpower Services | Bagalkot</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: #222;
+      background: #f7f7f7;
+    }
+
+    /* Header */
+    header {
+      background: #123047;
+      color: white;
+      padding: 15px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #f5b400;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #f5b400;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 550px;
+      display: flex;
+      align-items: center;
+      padding: 60px 8%;
+      background:
+        linear-gradient(rgba(10, 30, 45, 0.80), rgba(10, 30, 45, 0.80)),
+        url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #f5b400;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 5px;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: #f5b400;
+      color: #111;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    /* General */
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      color: #123047;
+    }
+
+    .section-title p {
+      color: #666;
+      margin-top: 10px;
+    }
+
+    /* About */
+    .about {
+      background: white;
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .service-card .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #123047;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* Hire Section */
+    .hire {
+      background: #123047;
+      color: white;
+      text-align: center;
+    }
+
+    .hire h2 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .hire p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .contact-card h3 {
+      color: #123047;
+      margin-bottom: 15px;
+    }
+
+    .contact-card p {
+      margin: 12px 0;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: #091d2b;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    /* Floating WhatsApp */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Mobile */
+    @media(max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      GURU <span>MANPOWER</span> SERVICES
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Reliable <span>Manpower</span> For Every Job</h1>
+
+      <p>
+        Guru Manpower Services provides reliable and hardworking
+        skilled and unskilled labour for agriculture, driving,
+        painting, construction and other work requirements in
+        Bagalkot and nearby areas.
+      </p>
+
+      <a href="tel:+919113878081" class="btn btn-primary">
+        📞 Call Now
+      </a>
+
+      <a href="https://wa.me/919113878081?text=Hello%20Guru%20Manpower%20Services%2C%20I%20need%20workers."
+         class="btn btn-whatsapp"
+         target="_blank">
+        💬 WhatsApp Us
+      </a>
+    </div>
+  </section>
+
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="section-title">
+      <h2>About Guru Manpower Services</h2>
+      <p>Professional Labour & Manpower Supply Services</p>
+    </div>
+
+    <div class="about-content">
+      <p>
+        <strong>Guru Manpower Services</strong> is a manpower supply
+        service based in <strong>Bagalkot, Karnataka</strong>.
+        We connect businesses, farmers, contractors and individuals
+        with suitable workers according to their requirements.
+      </p>
+
+      <br>
+
+      <p>
+        Our goal is to provide reliable workers and dependable
+        manpower solutions for every type of work.
+      </p>
+
+      <br>
+
+      <p><strong>Owner: DMS</strong></p>
+    </div>
+  </section>
+
+
+  <!-- Services -->
+  <section id="services">
+    <div class="section-title">
+      <h2>Our Manpower Services</h2>
+      <p>Workers available according to your requirements</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="icon">🚗</div>
+        <h3>Drivers</h3>
+        <p>Drivers available for personal, business and other requirements.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🌾</div>
+        <h3>Agriculture Labour</h3>
+        <p>Male and female agricultural workers for farm-related work.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">👩‍🌾</div>
+        <h3>Women Labour</h3>
+        <p>Reliable women workers available for suitable work requirements.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">👷</div>
+        <h3>Men Labour</h3>
+        <p>Hardworking male labourers for different types of jobs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🎨</div>
+        <h3>Painters</h3>
+        <p>Workers available for house, building and commercial painting work.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🏗️</div>
+        <h3>Construction Labour</h3>
+        <p>Manpower for construction and site-related work.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🛠️</div>
+        <h3>Skilled Workers</h3>
+        <p>Suitable skilled workers based on your work requirements.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🤝</div>
+        <h3>Other Services</h3>
+        <p>Contact us for other manpower and labour requirements.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Hire Workers -->
+  <section class="hire">
+    <h2>Need Workers?</h2>
+
+    <p>
+      Contact Guru Manpower Services today and tell us your manpower requirements.
+    </p>
+
+    <a href="tel:+919113878081" class="btn btn-primary">
+      📞 Call +91 9113878081
+    </a>
+
+    <a href="https://wa.me/919113878081?text=Hello%20Guru%20Manpower%20Services%2C%20I%20need%20workers."
+       class="btn btn-whatsapp"
+       target="_blank">
+      💬 Hire Through WhatsApp
+    </a>
+  </section>
+
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Get in touch with us for manpower requirements</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>📍 Location</h3>
+        <p><strong>Guru Manpower Services</strong></p>
+        <p>Bagalkot, Karnataka, India</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>📞 Phone & WhatsApp</h3>
+        <p>
+          <strong>Mobile:</strong>
+          <a href="tel:+919113878081">+91 9113878081</a>
+        </p>
+        <p>Available for manpower enquiries.</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>👤 Owner</h3>
+        <p><strong>DMS</strong></p>
+        <p>GG.pawar</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Guru Manpower Services</strong></p>
+    <p>Bagalkot, Karnataka</p>
+    <br>
+    <p>© 2026 Guru Manpower Services. All Rights Reserved.</p>
+  </footer>
+
+
+  <!-- Floating WhatsApp Button -->
+  <a
+    href="https://wa.me/919113878081?text=Hello%20Guru%20Manpower%20Services"
+    class="floating-whatsapp"
+    target="_blank"
+    title="Chat on WhatsApp">
+    💬
+  </a>
+
+</body>
+</html>
